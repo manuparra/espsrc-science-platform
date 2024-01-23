@@ -2,7 +2,9 @@
 
 <img width="1395" alt="imagen" src="https://github.com/manuparra/espsrc-science-platform/assets/7033451/9086e30f-4165-4a47-8b32-07064ff9e977">
 
+This is an semi-automated method to install CANFAR Science platform on Kubernetes
 
+[[TOC]]
 
 ## Install HELM
 
