@@ -27,10 +27,4 @@ chmod 700 get_helm.sh
 
 # Instalation of CANFAR
 
-```
-helm uninstall base
-helm uninstall posixmapper
-helm uninstall skaha
-kubectl get all -n skaha-system
-```
-
+TBC.
