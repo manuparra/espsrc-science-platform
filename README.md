@@ -1,5 +1,8 @@
 # CANFAR Science platform deployment
 
+<img width="1263" alt="imagen" src="https://github.com/manuparra/espsrc-science-platform/assets/7033451/f892d8a5-0f70-45a2-90ef-cc64882517b2">
+
+
 ## Install HELM
 
 On the `control-plane` node: 
