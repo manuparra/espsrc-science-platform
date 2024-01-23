@@ -21,7 +21,7 @@ echo "${RED}Installing storage${NC}"
 echo "${RED}-------------------------------${NC}"
 kubectl apply -f config/storage-pv-skaha.yaml
 kubectl apply -f config/storage-pv-skaha-cavern.yaml
-sleep 2
+sleep 10
 echo "${RED}Installing skaha${NC}"
 echo "${RED}-------------------------------${NC}"
 helm upgrade --install -n skaha-system --values config/skaha.yaml skaha science-platform/skaha
