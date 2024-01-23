@@ -16,3 +16,6 @@ kubectl apply -f storage-pv-skaha.yaml
 kubectl apply -f storage-pv-skaha-cavern.yaml
 echo "Installing skaha"
 helm upgrade --install -n skaha-system --values skaha.yaml skaha science-platform/skaha
+echo "Installing scienceplatform"
+helm install -n skaha-system --values scienceplatform.yaml scienceportal science-platform/scienceportal
+
