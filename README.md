@@ -4,9 +4,34 @@
 
 This is an semi-automated method to install CANFAR Science platform on Kubernetes
 
-[[TOC]]
+Steps are:
 
-## Install HELM
+1. Start and get this repository
+2. Install Helm (optional)
+3. Start with a clean environment (optional)
+4. Instalation of K8s Cluster with K3S
+5. Deployment of CANFAR
+6. Validation of the services deployed
+7. External EndPoint access
+
+## Start and get this repository
+
+💾 Create at least two nodes, one will be the `control-plane` and the another will be the `worker`.
+
+☢️ Go to the `control-plane`
+
+⚠️ Start with `sudo su -` for the whole process! 
+
+Then clone this repository:
+
+``
+git clone https://github.com/manuparra/espsrc-science-platform.git
+``
+
+Go to the folder `cd espsrc-science-platform` and follow the next steps of this tutorial.
+
+
+## Install HELM (optional)
 
 On the `control-plane` node: 
 
@@ -22,8 +47,7 @@ Include `KUBECONFIG` in order to use helm properly:
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 ```
 
-
-## Start with a clean environment
+## Start with a clean environment (optional)
 
 To start with a clean CANFAR environment, run the next. It will remove all the namespaces related with CANFAR:
 
@@ -97,7 +121,7 @@ List of services and enpoints exposed within the LoadBalancer on `192.168.250.13
 - `cavern-ingress` service is exposed on `/cavern`
 - `storage-ui` service is exposed on `/storage`
 
-## External EndPoint
+## External EndPoint access
 
 In order to access to the services exposed we will use APACHE to do it as a Proxy that redirect traffic from Internet to the Internal LoadBalancer on the K8S cluster.
 
