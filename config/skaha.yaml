@@ -2,7 +2,7 @@
  
 # Skaha web service deployment
 deployment:
-  hostname: spsr-jupyter.iaa.csic.es # Change this!
+  hostname: spsrc-jupyter.iaa.csic.es # Change this!
   skaha:
     # Space delimited list of allowed Image Registry hosts.  These hosts should match the hosts in the User Session images.
     registryHosts: "images.canfar.net"

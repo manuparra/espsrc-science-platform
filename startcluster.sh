@@ -2,7 +2,7 @@ RED='\033[0;31m'
 NC='\033[0m'
 
 echo "Installation of the cluster for spsrc-jupyter.iaa.csic.es"
-#curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--tls-san spsrc-jupyter.iaa.csic.es" sh -
+curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--tls-san spsrc-jupyter.iaa.csic.es" sh -
 echo "RUN"
 echo "--------------------------------------"
 TOKEN=`cat /var/lib/rancher/k3s/server/node-token`

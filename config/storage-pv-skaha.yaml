@@ -14,7 +14,7 @@ spec:
   persistentVolumeReclaimPolicy: Delete
   storageClassName: local-path
   local:
-    path: /home/ubuntu/skaha-pvc-data
+    path: /tmp/
   nodeAffinity:
     required:
       nodeSelectorTerms:

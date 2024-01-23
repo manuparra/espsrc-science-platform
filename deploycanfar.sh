@@ -1,9 +1,10 @@
 RED='\033[0;31m'
 NC='\033[0m'
 
-echo "${RED}Adding the repository of CANFAR${NC}"
+echo "${RED}Adding the repository of CANFAR and SP-Client${NC}"
 echo "${RED}-------------------------------${NC}"
 helm repo add science-platform https://images.opencadc.org/chartrepo/platform
+helm repo add science-platform-client https://images.opencadc.org/chartrepo/client
 sleep 1
 echo "${RED}Updating the helm repos ...${NC}"
 echo "${RED}-------------------------------${NC}"
@@ -29,4 +30,11 @@ sleep 2
 echo "${RED}Installing scienceplatform${NC}"
 echo "${RED}-------------------------------${NC}"
 helm install -n skaha-system --values config/scienceplatform.yaml scienceportal science-platform/scienceportal
-
+sleep 5
+echo "${RED}Installing cavern${NC}"
+echo "${RED}-------------------------------${NC}"
+helm install -n skaha-system --values config/cavern.yaml cavern science-platform/cavern
+sleep 5
+echo "${RED}Installing storage-ui${NC}"
+echo "${RED}-------------------------------${NC}"
+helm -n skaha-system upgrade --dependency-update --install --values config/storage-ui.yaml storageui science-platform-client/storageui
