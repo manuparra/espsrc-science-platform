@@ -1,21 +1,25 @@
-helm uninstall base
-helm uninstall posixmapper
-helm uninstall skaha
-echo "No skaha-system pods installed ..."
-kubectl get all -n skaha-system
-echo "Adding the repository of CANFAR"
+RED='\033[0;31m'
+NC='\033[0m'
+
+echo -e "${RED}Adding the repository of CANFAR${NC}"
 helm repo add science-platform https://images.opencadc.org/chartrepo/platform
-echo "Updating the helm repos ..."
+sleep 1
+echo "${RED}Updating the helm repos ...${NC}"
 helm repo update
-echo "Installing science platorm - Base"
+sleep 1
+echo "${RED}Installing science platorm - Base${NC}"
 helm upgrade --install base science-platform/base
-echo "Installing science platfor - PosixMapper"
-helm upgrade --install -n skaha-system  --values posix-mapper.yaml posixmapper science-platform/posixmapper
-echo "Installing storage"
-kubectl apply -f storage-pv-skaha.yaml
-kubectl apply -f storage-pv-skaha-cavern.yaml
-echo "Installing skaha"
-helm upgrade --install -n skaha-system --values skaha.yaml skaha science-platform/skaha
-echo "Installing scienceplatform"
-helm install -n skaha-system --values scienceplatform.yaml scienceportal science-platform/scienceportal
+sleep 1
+echo "${RED}Installing science platfor - PosixMapper${NC}"
+helm upgrade --install -n skaha-system  --values config/posix-mapper.yaml posixmapper science-platform/posixmapper
+sleep 2
+echo "${RED}Installing storage${NC}"
+kubectl apply -f config/storage-pv-skaha.yaml
+kubectl apply -f config/storage-pv-skaha-cavern.yaml
+sleep 2
+echo "${RED}Installing skaha${NC}"
+helm upgrade --install -n skaha-system --values config/skaha.yaml skaha science-platform/skaha
+sleep 2
+echo "${RED}Installing scienceplatform${NC}"
+helm install -n skaha-system --values config/scienceplatform.yaml scienceportal science-platform/scienceportal
 
