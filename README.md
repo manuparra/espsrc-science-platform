@@ -1,6 +1,7 @@
 # CANFAR Science platform deployment
 
-<img width="1263" alt="imagen" src="https://github.com/manuparra/espsrc-science-platform/assets/7033451/f892d8a5-0f70-45a2-90ef-cc64882517b2">
+<img width="1395" alt="imagen" src="https://github.com/manuparra/espsrc-science-platform/assets/7033451/9086e30f-4165-4a47-8b32-07064ff9e977">
+
 
 
 ## Install HELM
