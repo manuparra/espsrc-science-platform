@@ -4,7 +4,7 @@ kind: PersistentVolume
 metadata:
   name: science-platform-cavern-volume  # Name is irrelevant
   labels:
-    storage: local-storage # Labels are VERY relevant.  They should match the values.yaml configuration.
+    storage: local-path # Labels are VERY relevant.  They should match the values.yaml configuration.
 spec:
   capacity:
     storage: 10Gi
