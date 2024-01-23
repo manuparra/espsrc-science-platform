@@ -1,0 +1,40 @@
+# Example Persistent Volume declaration.  The labels to match on is configurable.
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: science-platform-cavern-volume  # Name is irrelevant
+  labels:
+    storage: local-storage # Labels are VERY relevant.  They should match the values.yaml configuration.
+spec:
+  capacity:
+    storage: 10Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: hostpath
+  local:
+    path: /home/ubuntu/skaha-cavern-pvc-data
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:           
+          - spsrc-k8-cluster00
+          - spsrc-k8-cluster01
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: skaha-workload-cavern-pvc
+  namespace: skaha-workload
+spec:
+  storageClassName: hostpath
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 10Gi
+
