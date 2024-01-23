@@ -31,7 +31,7 @@ metadata:
   name: skaha-workload-cavern-pvc
   namespace: skaha-workload
 spec:
-  storageClassName: hostpath
+  storageClassName: local-path
   accessModes:
     - ReadWriteMany
   resources:

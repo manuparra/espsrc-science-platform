@@ -31,7 +31,7 @@ metadata:
   name: skaha-pvc
   namespace: skaha-system
 spec:
-  storageClassName: hostpath
+  storageClassName: local-path
   accessModes:
     - ReadWriteMany
   resources:
