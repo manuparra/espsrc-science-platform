@@ -28,9 +28,9 @@ deployment:
     # Dictionary of all VOSpace APIs (Services) available that will be visible on the UI.
     # Format is:
     backend:
-       defaultService: cavern
+       defaultService: manucavern
        services:
-         cavern:
+         manucavern:
            resourceID: "ivo://espsrc.iaa.csic.es/cavern"
            nodeURIPrefix: "vos://espsrc.iaa.csic.es~cavern"
            userHomeDir: "/home"

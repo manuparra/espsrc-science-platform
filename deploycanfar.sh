@@ -37,4 +37,4 @@ helm install -n skaha-system --values config/cavern.yaml cavern science-platform
 sleep 5
 echo "${RED}Installing storage-ui${NC}"
 echo "${RED}-------------------------------${NC}"
-helm -n skaha-system upgrade --dependency-update --install --values config/storage-ui.yaml storageui science-platform-client/storageui
+helm -n skaha-system upgrade --install --values config/storage-ui.yaml storage-ui science-platform-client/storageui
