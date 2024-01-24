@@ -77,7 +77,7 @@ First, include `KUBECONFIG` in order to use helm properly:
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 ```
 
-This step will create a cluster with one control plane and `n`  worker nodes. Change the values of 
+The next step will create a cluster with one control plane and `n` worker nodes. Change the values of ``--tls-san`` and the control-plane host within the file ``startcluster.sh``:
 
 - ``--tls-san spsrc-jupyter.iaa.csic.es`` by your IP/FQDN, ie: 192.168.100.20 or mycomputer.local, etc,
 - ``https://192.168.250.132`` by your control-plane host, ie: https://192.168.100.20
